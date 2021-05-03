@@ -21,6 +21,8 @@ class App extends React.Component {
   //     if (compareVar.indexOf(e.target.value))
   //  {}
     const url = `https://us1.locationiq.com/v1/search.php?key=pk.ef272e05af798be0da59b36a8f8ca07f&q=${this.state.query}&format=json`;
+    const myApi = await axios.get('http://localhost:3001/about');
+    console.log(myApi);
     let req={};
     try{req = await axios.get(url) } catch {alert('wrong location') 
     ; return };
